@@ -65,7 +65,7 @@ class simulacion():
 
 
 
-    def run_simulation(self,theta_des = np.pi,kp=0,ki=0,kd=0,animate=True,c_color ="blueviolet",p_color="purple"):
+    def run_simulation(self,theta_des = np.pi,kp=0,ki=0,kd=0,animate=True,c_color ="purple",p_color="blueviolet"):
         """
         ################################################
         ## Define your Control Input (Force on the Cart)
