@@ -164,7 +164,7 @@ class simulacion():
         if animate == True:
             # Setup Figure:
             fig, ax = plt.subplots()
-            p, = ax.plot([], [], color='royalblue')
+            p, = ax.plot([], [], color='aqua')
             min_lim = -5
             max_lim = 5
             ax.axis('equal')
