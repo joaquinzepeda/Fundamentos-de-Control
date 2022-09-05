@@ -65,7 +65,7 @@ class simulacion():
 
 
 
-    def run_simulation(self,theta_des = np.pi,kp=0,ki=0,kd=0,animate=True):
+    def run_simulation(self,theta_des = np.pi,kp=0,ki=0,kd=0,animate=True,c_color ="blueviolet",p_color="purple"):
         """
         ################################################
         ## Define your Control Input (Force on the Cart)
@@ -81,7 +81,10 @@ class simulacion():
         :param float ki: ganancia integral
         :param float kd: ganancia derivativa
         :param bool animate: si es True realiza la animación
-        
+        :param str c_color: color del carro
+        :param str p_color: color del pendulo
+
+        Colores disponibles en https://matplotlib.org/stable/gallery/color/named_colors.html 
         """
         # Define Pendulum Parameters:
         g = 9.8  # gravity (m/s^2)
@@ -102,7 +105,6 @@ class simulacion():
         theta_vec = np.zeros(vec_size)
         dtheta_vec = np.zeros(vec_size)
 
-        error_container = np.zeros(vec_size)
 
         # Pole End effector Location for Animation:
         x_pole = np.zeros(vec_size)
@@ -164,7 +166,7 @@ class simulacion():
         if animate == True:
             # Setup Figure:
             fig, ax = plt.subplots()
-            p, = ax.plot([], [], color='aqua')
+            p, = ax.plot([], [], color=p_color)
             min_lim = -5
             max_lim = 5
             ax.axis('equal')
@@ -185,7 +187,7 @@ class simulacion():
             width = 1  # Width of Cart
             height = width / 2  # Height of Cart
             xy_cart = (x_vec[0] - width / 2, y_offset - height / 2)  # Bottom Left Corner of Cart
-            r = Rectangle(xy_cart, width, height, color='cornflowerblue')  # Rectangle Patch
+            r = Rectangle(xy_cart, width, height, color=c_color)  # Rectangle Patch
             ax.add_patch(r)  # Add Patch to Plot
 
             # Draw the Ground:
