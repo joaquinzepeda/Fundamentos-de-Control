@@ -226,7 +226,7 @@ class simulacion():
         """
         Retorna los vectores de posición y velocidad del carro y del péndulo luego de realizada la simulación.
         """
-        return [self.x_container,self.dx_container,self.theta_container,self.dtheta_container]
+        return [self.x_container,self.dx_container,self.theta_container,self.dtheta_container,self.error_container,self.u_container]
 
     def plot_error(self,title="Error con respecto al tiempo"):
         plt.figure()
