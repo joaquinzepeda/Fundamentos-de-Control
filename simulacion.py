@@ -263,7 +263,7 @@ class simulacion():
         plt.grid()
         plt.show()
     
-    def plot_theta(self,title="Velocidad angular del péndulo con respecto al tiempo"):
+    def plot_dtheta(self,title="Velocidad angular del péndulo con respecto al tiempo"):
         plt.figure()
         plt.plot(self.dtheta_container)
         plt.title(title)
