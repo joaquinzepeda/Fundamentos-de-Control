@@ -242,28 +242,28 @@ class simulacion():
         plt.grid()
         plt.show()
 
-    def plot_x_position(self,title="Posición del carro con respecto al tiempo"):
+    def plot_x(self,title="Posición del carro con respecto al tiempo"):
         plt.figure()
         plt.plot(self.x_container)
         plt.title(title)
         plt.grid()
         plt.show()
 
-    def plot_dx_position(self,title="Velocidad del carro con respecto al tiempo"):
+    def plot_dx(self,title="Velocidad del carro con respecto al tiempo"):
         plt.figure()
         plt.plot(self.dx_container)
         plt.title(title)
         plt.grid()
         plt.show()
 
-    def plot_theta_position(self,title="Ángulo del péndulo con respecto al tiempo"):
+    def plot_theta(self,title="Ángulo del péndulo con respecto al tiempo"):
         plt.figure()
         plt.plot(self.theta_container)
         plt.title(title)
         plt.grid()
         plt.show()
     
-    def plot_theta_position(self,title="Velocidad angular del péndulo con respecto al tiempo"):
+    def plot_theta(self,title="Velocidad angular del péndulo con respecto al tiempo"):
         plt.figure()
         plt.plot(self.dtheta_container)
         plt.title(title)
