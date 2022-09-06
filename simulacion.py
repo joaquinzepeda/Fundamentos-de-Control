@@ -48,6 +48,11 @@ class simulacion():
         self.error_container = []
         self.u_container = []
 
+        self.x_container = []
+        self.dx_container = []
+        self.theta_container = []
+        self.dtheta_container = []
+
     def set_initial_conditions(self,x0,dx0,theta0,dtheta0):
         """
         ## Choose the starting position of the Cartpole
@@ -162,6 +167,11 @@ class simulacion():
             # Extra States for Animation:
             x_pole[i] = x_vec[i] + L * np.sin(theta_vec[i])
             y_pole[i] = y_offset - L * np.cos(theta_vec[i])
+        
+        self.x_container = x_vec
+        self.dx_container = dx_vec
+        self.theta_container = theta_vec
+        self.dtheta_container = dtheta_vec
 
         if animate == True:
             # Setup Figure:
@@ -212,6 +222,12 @@ class simulacion():
                     # Save Frame:
                     writerObj.grab_frame()
 
+    def getSimulationArrays(self):
+        """
+        Retorna los vectores de posición y velocidad del carro y del péndulo luego de realizada la simulación.
+        """
+        return [self.x_container,self.dx_container,self.theta_container,self.dtheta_container]
+
     def plot_error(self,title="Error con respecto al tiempo"):
         plt.figure()
         plt.plot(self.error_container)
@@ -222,6 +238,34 @@ class simulacion():
     def plot_control_force(self,title="U con respecto al tiempo"):
         plt.figure()
         plt.plot(self.u_container)
+        plt.title(title)
+        plt.grid()
+        plt.show()
+
+    def plot_x_position(self,title="Posición del carro con respecto al tiempo"):
+        plt.figure()
+        plt.plot(self.x_container)
+        plt.title(title)
+        plt.grid()
+        plt.show()
+
+    def plot_dx_position(self,title="Velocidad del carro con respecto al tiempo"):
+        plt.figure()
+        plt.plot(self.dx_container)
+        plt.title(title)
+        plt.grid()
+        plt.show()
+
+    def plot_theta_position(self,title="Ángulo del péndulo con respecto al tiempo"):
+        plt.figure()
+        plt.plot(self.theta_container)
+        plt.title(title)
+        plt.grid()
+        plt.show()
+    
+    def plot_theta_position(self,title="Velocidad angular del péndulo con respecto al tiempo"):
+        plt.figure()
+        plt.plot(self.dtheta_container)
         plt.title(title)
         plt.grid()
         plt.show()
