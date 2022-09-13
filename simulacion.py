@@ -228,6 +228,23 @@ class simulacion():
         """
         return [self.x_container,self.dx_container,self.theta_container,self.dtheta_container,self.error_container,self.u_container]
 
+    def reset(self):
+        """
+        Resetea los valores de la simulación (Condiciones iniciales y los arreglos de la simulación)
+        """
+        self.x0 = 0   # Cart Position
+        self.dx0 = 0  # Cart Velocity
+        self.theta0 = 9.5*np.pi/10 # Pole Angle
+        self.dtheta0 = 0  # Pole Angular Velocity
+
+        self.error_container = []
+        self.u_container = []
+
+        self.x_container = []
+        self.dx_container = []
+        self.theta_container = []
+        self.dtheta_container = []
+
     def plot_error(self,title="Error con respecto al tiempo"):
         plt.figure()
         plt.plot(self.error_container)
