@@ -177,8 +177,8 @@ class simulacion():
             # Setup Figure:
             fig, ax = plt.subplots()
             p, = ax.plot([], [], color=p_color)
-            min_lim = -5
-            max_lim = 5
+            min_lim = -10
+            max_lim = 10
             ax.axis('equal')
             ax.set_xlim([min_lim, max_lim])
             ax.set_ylim([min_lim, max_lim])
